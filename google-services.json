@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "422400034639",
+    "firebase_url": "https://dan-vkids.firebaseio.com",
+    "project_id": "dan-vkids",
+    "storage_bucket": "dan-vkids.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422400034639:android:bbf5f84ac8113984",
+        "android_client_info": {
+          "package_name": "br.com.araujjo.vkids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422400034639-3aqfu2omti65556ck0enhcj5b8cpfmb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu_6FyKCv-AjpvkrSQs2UjfFOPwFlDTkU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422400034639:android:4c0dd02329836cce",
+        "android_client_info": {
+          "package_name": "br.com.araujjo.vkidsad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422400034639-3aqfu2omti65556ck0enhcj5b8cpfmb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu_6FyKCv-AjpvkrSQs2UjfFOPwFlDTkU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

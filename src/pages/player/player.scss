@@ -1,0 +1,150 @@
+page-player {
+
+ion-content {
+    margin:0;
+    overflow:hidden;
+     
+}
+
+ion-header, ion-footer {    
+     color: #ffffff; 
+     .toolbar-background-md, .toolbar-background-ios, .toolbar-background-wp {
+     border-color: none !important;
+     background:none !important;
+}
+}
+
+ion-label {
+  white-space: normal !important;
+}
+
+
+#placeholder {
+    pointer-events: none;
+    width: 100%; 
+    height: 100%;
+}
+
+.footerShow {
+   display: block;    
+}
+
+.footerHide {
+   display: none;
+}
+
+.bar-button-md[icon-only]{
+  top: 0 !important;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.opacity {
+    opacity: 0.5 !important;
+}
+
+.opacity2 {  
+    opacity: 0.8;
+}
+
+ #left {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  z-index: 11;
+}
+
+#right {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+  z-index: 11;
+}
+
+.fixed-content, .scroll-content {
+     margin-top : 0 !important;
+     margin-bottom : 0 !important;
+}
+
+#content {    
+    color: white;   
+    position: absolute; 
+     z-index: 10;  
+}
+
+#contPlayer {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (orientation: portrait) {
+
+#sideMenu {
+    display: none;
+}
+
+#player {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: fixed;
+    padding-bottom: 56.25%;
+    height: 0;   
+    background-color: black !important; 
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+ iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.centerItens {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11 ;
+}
+
+#footerPortrait{
+    padding-top: 56.25%;
+}
+
+ion-card {
+  
+  max-width:130px; 
+  
+}
+}
+
+@media screen and (orientation: landscape) {
+
+#player {
+    position: fixed;
+    top:0; 
+    left:0; 
+    width: 100%; 
+    height: 100%;
+    background-color: black !important;
+} 
+
+#footerPortrait {
+    display: none;
+}
+
+}
+}
+
+

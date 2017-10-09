@@ -1,0 +1,58 @@
+page-home {
+
+ion-content {
+  background-color: #EEF2F4 !important;
+  position: center;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);  
+}
+
+//Flex Box
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+ion-label {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+@media screen and (orientation: portrait) {
+.flex-item {
+    max-width: calc( 100% /2 );
+}
+
+@media (min-width: 767px) {
+    .flex-item {
+    max-width: calc( 100% /3 );
+}
+}
+}
+
+@media screen and (orientation: landscape) {
+  .flex-item {
+    max-width: calc( 100% /4 );
+}
+  @media (max-width: 480px) { 
+    .flex-item {
+    max-width: calc( 100% /3 );
+}
+}
+
+ @media (min-width: 1000px) {
+    .flex-item {
+    max-width: calc( 100% /6 );
+}
+}  
+}
+
+
+
+
+
+
+}

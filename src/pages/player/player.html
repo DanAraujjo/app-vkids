@@ -1,0 +1,71 @@
+<ion-header no-border [class.footerShow]="showFooter" [class.footerHide]="!showFooter">
+  <ion-toolbar color="vk">
+    <ion-buttons start left>
+      <button ion-button icon-only (click)="goBack()"><ion-icon name="arrow-back"></ion-icon></button>
+    </ion-buttons>
+    <ion-title *ngIf="online">{{title}}</ion-title>
+    <ion-title *ngIf="!online">Conectando...</ion-title>
+    <ion-buttons end>
+      <button id="sideMenu" ion-button icon-only (click)="openMenu()">
+      <ion-spinner *ngIf="!loadItens" color="white"></ion-spinner>   
+      <ion-icon name="list" *ngIf="loadItens"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="content">
+    <div id="player" (click)="continue()">
+      <ion-spinner *ngIf="stateVideo < 1 || stateVideo > 2" class="centered" color="white"></ion-spinner>
+
+      <button ion-button outline large round strong color="white" class="centered" [class.footerShow]="stateVideo == 2" [class.footerHide]="stateVideo != 2"
+        (click)="clickPlayPause()"><ion-icon name="play"></ion-icon>
+        </button>
+
+      <div id="left" [class.footerShow]="showFooter" [class.footerHide]="!showFooter">
+        <button ion-button icon-only outline round color="white" (click)="previousVideo()"><ion-icon name="skip-backward"></ion-icon></button>
+      </div>
+
+      <div id="right" [class.footerShow]="showFooter" [class.footerHide]="!showFooter">
+        <button ion-button icon-only outline round color="white" (click)="nextVideo()"><ion-icon name="skip-forward"></ion-icon></button>
+      </div>
+
+      <div id="contPlayer" [class.opacity]="stateVideo == 2" [class.opacity2]="showFooter">
+        <div id="placeholder">
+        </div>
+      </div>
+
+      <ion-footer no-border [class.footerShow]="showFooter" [class.footerHide]="!showFooter">
+        <ion-toolbar>
+
+          <ion-buttons start left>
+            <button ion-button icon-only color="white" (click)="clickPlayPause()"><ion-icon name="{{stateVideo == 1 ? 'pause' : 'play'}}"></ion-icon></button>
+          </ion-buttons>
+
+          <ion-range [(ngModel)]="rangeVal" color="vk" min="0" max="{{rangeMax}}" (ionChange)="seekTo($event)">
+            <div range-left>{{currentTimeVideo}}</div>
+            <div range-right>{{durationVideo}}</div>
+          </ion-range>
+
+        </ion-toolbar>
+      </ion-footer>
+    </div>
+  </div>
+
+  <div id="footerPortrait">
+    <ion-spinner *ngIf="!loadItens" class="centerItens" color="vk"></ion-spinner>
+    <div>
+      <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)" placeholder="Pesquisa" animated="true" *ngIf="loadItens">
+      </ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let video of listVideos; let id = index">
+          <ion-card item-left>
+        <image-loader [src]="video.snippet.thumbnails.high.url" [type]="'video'" (click)="playVideo(id)"></image-loader>
+      </ion-card>          
+          {{video.snippet.title}}
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

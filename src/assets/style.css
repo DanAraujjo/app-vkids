@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'JandaManateeBubble';
+    src:  url('font/JandaManateeBubble.ttf') format('truetype');
+}
+
+.bg {
+    background-color: #8B9AFB !important;
+}
+
+.centerSplash {
+    color: white; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-family: 'JandaManateeBubble','Roboto', 'Helvetica Neue', sans-serif; 
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 2px solid #616baf;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

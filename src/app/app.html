@@ -1,0 +1,14 @@
+<ion-menu [content]="content" side="right" type="overlay" id="menu2">
+    <ion-content style="background-color: #EEF2F4;" padding>
+        <div *ngFor="let video of listVideos; let id = index" (click)="playVideo(id)" menuClose="menu2">
+            <ion-card>
+                <image-loader [src]="video.snippet.thumbnails.high.url" [type]="'video'"></image-loader>
+                <ion-card-content>
+                    {{video.snippet.title}}
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #nav #content></ion-nav>

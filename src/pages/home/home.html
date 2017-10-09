@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="vk">
+    <ion-title *ngIf="online" style="font-family: 'JandaManateeBubble';">VKids</ion-title>
+    <ion-title *ngIf="!online">Conectando...</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="flex-container">
+    <div *ngFor="let channel of listChannels | sortBy" class="flex-item">
+      <ion-card class="animated fadeIn item-remove-animate">
+        <image-loader [src]="channel.snippet.thumbnails.high.url" [type]="'channel'" (click)="goPlayer(channel)"></image-loader>
+        <ion-item>
+          {{channel.snippet.title}}
+          <p><ion-icon name="logo-youtube"></ion-icon>&nbsp;{{channel.contentDetails.totalItemCount}}</p>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
